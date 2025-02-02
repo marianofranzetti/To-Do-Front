@@ -1,0 +1,56 @@
+.tareas-contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.tarea-contenedor {
+    margin-right: 2%;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px;
+    background-color: #f9f9f9; /* Color de fondo suave */
+    border: 1px solid #dcdcdc; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición para hover */
+}
+
+.tarea-contenedor:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.tarea-contenedor p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333; /* Color de texto */
+}
+
+.delete-button{
+    background-color: rgb(179, 10, 10);
+}
+
+.tarea-contenedor a:hover {
+    text-decoration: underline; /* Subrayado al pasar el cursor */
+}
+
+.tarea-contenedor button {
+    margin-right: 5px;
+    padding: 8px 12px;
+}
+
+p {
+    max-width: 225px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+button {
+    margin-left: 1rem
+}
+
+a {
+    text-decoration: none;
+}

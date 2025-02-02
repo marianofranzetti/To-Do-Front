@@ -1,0 +1,37 @@
+<mat-toolbar>
+    <span>
+        <a routerLink="" mat-button>
+            <mat-icon>local_movies</mat-icon> Angular Tareas
+        </a>
+    </span>
+
+    <div>
+        <a mat-button routerLink="tareas/filtrar">
+            <mat-icon>search</mat-icon>
+            Buscar Tareas</a>
+    </div>
+
+    <app-autorizado rol="admin">
+        <ng-container autorizado>
+            <div>
+                <a mat-button routerLink="tareas">Tareas List</a>
+            </div>
+        </ng-container>
+    </app-autorizado>
+
+    <div class="espacio"></div>
+
+    <app-autorizado style="display:inline">
+        <ng-container autorizado>
+            <span class="saludo">Hola, {{seguridadService.obtenerCampoJWT('email')}}</span>
+            <a mat-button (click)="seguridadService.logout()">Logout</a>
+        </ng-container>
+
+        <ng-container noAutorizado>
+            <a mat-button routerLink="login">Login</a>
+            <a mat-button routerLink="registrar">Registro</a>
+        </ng-container>
+    </app-autorizado>
+
+   
+</mat-toolbar>

@@ -1,0 +1,28 @@
+<form (submit)="guardarCambios()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput [formControl]="form.controls.nombre" />
+        <mat-error>{{obtenerErrorCampoNombre()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripcion</mat-label>
+        <input matInput [formControl]="form.controls.descripcion" />
+        <mat-error>{{obtenerErrorCampoDescripcion()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha Limite</mat-label>
+        <input matInput [matDatepicker]="picker" [formControl]="form.controls.fechaLimite" />
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-error>{{obtenerErrorCampoFechaLimite()}}</mat-error>
+    </mat-form-field>
+
+    <div class="contenedor-botones">
+        <button mat-flat-button type="submit"
+        [disabled]="form.invalid"
+        >Guardar cambios</button>
+        <a mat-stroked-button routerLink="/tareas">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,39 @@
+<h2>Buscar Tareas  <app-autorizado rol="admin">
+    <ng-container autorizado>
+      <div>
+        <button class="boton-create" mat-flat-button [routerLink]="['/tareas/crear']">Crear Nueva</button>
+      </div>
+    </ng-container>
+  </app-autorizado></h2>
+
+
+<form [formGroup]="form">
+
+    <mat-form-field appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput [formControl]="form.controls.nombre" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Descripcion</mat-label>
+        <input matInput [formControl]="form.controls.descripcion" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Fecha Límite</mat-label>
+        <input matInput [matDatepicker]="picker" [formControl]="form.controls.fechaLimite">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error>{{ObtenerErrorFecha()}}</mat-error>
+    </mat-form-field>
+    <div>
+        <button (click)="limpiar()" mat-flat-button color="warn">Limpiar</button>
+    </div>
+</form>
+
+<app-listado-tareas [tareas]="tareas"></app-listado-tareas>
+
+<mat-paginator showFirstLastButtons [length]="cantidadTotalRegistros" [pageIndex]="paginacion.pagina"
+[pageSize]="paginacion.recordsPorPagina" [pageSizeOptions]="[5, 10, 50]" class="mat-elevation-z8"
+(page)="actualizarPaginacion($event)"
+></mat-paginator>
