@@ -1,0 +1,16 @@
+
+<h2>Clima</h2>
+<app-listado-generico [listado]="climas">
+    <ng-container contenido>
+      <div class="tareas-contenedor">
+        @for (clima of climas; track $index) {
+        <div class="tarea-contenedor">
+            <p class="mat-body-1 text-start">date: {{this.formDate(clima.date)}}</p>
+          <p class="mat-body-1 text-start">temperatureC: {{clima.temperatureC}}</p>
+          <p class="mat-body-1 text-start">temperatureF: {{clima.temperatureF}}</p>
+          <p class="mat-body-1 text-start">summary: {{clima.summary}}</p>
+        </div>
+        }
+      </div>
+    </ng-container>
+  </app-listado-generico>

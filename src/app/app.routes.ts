@@ -9,6 +9,7 @@ import { CrearTareasComponent } from './tareas/crear-tareas/crear-tareas.compone
 import { EditarTareaComponent } from './tareas/editar-tarea/editar-tarea.component';
 import { FiltroTareasComponent } from './tareas/filtro-tareas/filtro-tareas.component';
 import { DetalleTareaComponent } from './tareas/detalle-tarea/detalle-tarea.component';
+import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 
 export const routes: Routes = [
     {path: '', component: LandingPageComponent},
@@ -20,5 +21,7 @@ export const routes: Routes = [
     {path: 'login', component: LoginComponent},
     {path: 'registrar', component: RegistroComponent},
     {path: 'usuarios', component: IndiceUsuariosComponent, canActivate: [esAdminGuard]},
+    {path: 'clima', component: WeatherForecastComponent},
+
     {path: '**', redirectTo: ''},
 ];

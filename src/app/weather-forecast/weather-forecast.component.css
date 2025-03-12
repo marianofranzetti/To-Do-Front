@@ -1,0 +1,35 @@
+.tareas-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-around;
+  }
+  
+  .tarea-contenedor {
+    width: 300px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .tarea-contenedor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .mat-body-1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .mat-card-content {
+    padding: 0;
+  }
+  
+  .mat-card-content p {
+    margin: 0;
+  }
+  
